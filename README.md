@@ -83,16 +83,153 @@ The **important** point here is to have 2 network adapters.
 Now click on **Start**
 
 
-Click on Accept
+- Click on Accept
 
 ![image](https://github.com/user-attachments/assets/154520c0-7404-4022-83ac-cc555957b720)
 
 
+- Click on **Install pfSense**
+
+![image](https://github.com/user-attachments/assets/89bcbc4c-7f44-4172-aeaa-055ff1e361a4)
+
+
+- Click **Ok** in Setting up the network to continue the installation 
+
+![image](https://github.com/user-attachments/assets/a3d174c5-acba-48dc-897b-efdbbab034df)
+
+- Click on **Assign/Configure** in **Interface Assignment and Configuration**
+
+![image](https://github.com/user-attachments/assets/4687c6bd-981b-45a2-ba54-1b4649be0c8e)
+
+
+- Click on **Continue**
+
+
+![image](https://github.com/user-attachments/assets/1c88e7cb-a1fc-4373-a630-0ac0970c9aac)
 
 
 
 
+- Select **WAN** and Click on **Continue**  in **Interface Assignment and Configuration**
 
 
+
+![image](https://github.com/user-attachments/assets/173a1008-9f80-47dd-930a-30f24d269c71)
+
+
+- Click on **Install CE** (CE means Community Edition)
+
+
+
+![image](https://github.com/user-attachments/assets/ab007178-0aba-475e-a497-6eb292f6c1b2)
+
+
+- Click on **Continue**
+
+![image](https://github.com/user-attachments/assets/4ba7a458-6aa7-4756-bdbf-2f8cc1a0131a)
+
+
+- Click **OK** in **Virtual Device Type Configuration**
+
+![image](https://github.com/user-attachments/assets/da1edfa9-b1dc-4a85-b031-b0af5fe65ac3)
+
+
+- Click **OK** in **Disk Selection**
+
+![image](https://github.com/user-attachments/assets/dc962da8-0f8f-42be-b8e9-0e9eed76f7c7)
+
+
+- Click **Yes** in **Confirmation**
+
+![image](https://github.com/user-attachments/assets/2c023427-93f2-40b1-98e1-138fc1f91a0c)
+
+
+- Select **Stable Release** and Click **Ok** for **Software Version**
+
+![image](https://github.com/user-attachments/assets/47d69ed5-1d70-4dd5-a1c8-2b9ec476a7d3)
+
+
+- Wait for complete installation in will take time.
+
+- Goto **VirtualBox** Setting.
+- Goto **Storage** tab.
+- Remove **ISO** file.
+- Restart **pfSense** 
+
+![image](https://github.com/user-attachments/assets/1e30fd59-9741-4675-9d8c-8f9e56cce003)
+
+
+**Configuration**
+
+
+- Press **n** for **should VLANs be set up now**
+
+<img width="581" alt="image" src="https://github.com/user-attachments/assets/8f2c5798-0283-4d80-8a2c-1e8d377a5eb8">
+
+
+
+- For **Enter the WAN interface name** enter **le0**
+- For **Enter the LAN interface name** enter **le1**
+
+
+![image](https://github.com/user-attachments/assets/f42e13b4-1f98-4180-9828-0ef94682a653)
+
+
+Now we are finished.
+
+Head over to **another machine** which is in same network as **pfSense**
+I will be using windows 10.
+
+Windows machine should be using same **NAT Network** as **pfSense**
+
+- Goto Network Setting.
+- Change Adapter Setting.
+- Select IPv4
+- Click on Properties.
+- Select Automatic settings.
+
+
+- Goto Web Browser.
+- Enter the LAN IP which is set for **pfSense**.
+
+
+![image](https://github.com/user-attachments/assets/d5f7f807-5db7-40ea-baa7-4a41587251ff)
+
+Username : admin
+Password : pfsense
+
+
+- A setup **Wizard** will open.
+- On 4th step uncheck **RFC1918** (It will block private networks (10/8, 172.16, 192.168/16)
+
+
+![image](https://github.com/user-attachments/assets/40f79869-5632-463e-b4aa-b82a350852f4)
+
+- Finish the setup wizard.
+
+
+**To Install third party packages**
+- Goto **System**
+- Select **Package Manager**
+- **Available Packages**
+- Search the package you want to install.
+
+![image](https://github.com/user-attachments/assets/99e539ee-4774-41b4-a15b-c47f3f837e5f)
+
+**Setting the Rules**
+- Goto **Firewall**
+- Select **Rules**
+
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/b58d564e-fec9-42dd-aaf7-9d1be51ef0c6">
+
+- Add the Rules here
+
+<img width="590" alt="image" src="https://github.com/user-attachments/assets/b62706fd-dacf-42f8-ac8b-1bf3ac6d13b1">
+
+
+
+
+# Conclusion
+Installing and configuring pfSense is a key step in creating a secure and efficient network environment. The process, from setting up hardware or a virtual machine to finalizing the configuration through its intuitive web interface, ensures that essential network components like firewalls, IP addressing, and routing are effectively managed. With powerful features such as VPNs, traffic shaping, and intrusion detection, pfSense provides flexibility and scalability for networks of all sizes. Its modular design allows for further customization through additional packages. Regular updates and careful configuration maintain security and performance, making pfSense a reliable, cost-effective solution for modern network management.
 
 
